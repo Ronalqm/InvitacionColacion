@@ -6,6 +6,7 @@
   <title>Invitación - Colación de Grado</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     :root {
       --azul-salesiano: #002e6d;
@@ -32,7 +33,7 @@
 
     .titulo {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.3rem;
+      font-size: 2.1rem;
       color: white;
     }
 
@@ -41,6 +42,10 @@
       font-size: 2.3rem;
       color: var(--amarillo-salesiano);
       margin-bottom: 0px;
+    }
+
+    .padrinos {
+      color: var(--amarillo-salesiano);
     }
 
     .btn-ubicacion {
@@ -105,6 +110,43 @@
       margin-bottom: 2rem;
       text-align: center;
     }
+
+    .timeline {
+    border-left: 3px solid #ccc;
+    margin-left: 10px;
+    padding-left: 0px;
+  }
+
+  .event {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .event::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 45px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--amarillo-salesiano);
+    border-radius: 50%;
+  }
+
+  .time {
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+    margin: 5px 0;
+  }
+
+  .desc {
+    font-style: italic;
+    color: #ffffff;
+  }
   </style>
 </head>
 <body>
@@ -126,13 +168,14 @@
 
   <!-- Dedicatoria -->
   <section>
-    <p class="titulo">Agradecimiento a mi Querida Mam&aacute</p>
+    <p class="titulo">Agradecimiento a mi Querida Mamá</p>
     <p class="fst-italic">
-      Para ti, mamá Yandira Miranda Choque,<br>
+      Para ti, mamá Yandira Miranda Choque<span style="font-size: 1.2rem; color: var(--amarillo-salesiano);">✝</span>,<br>
       cada paso que doy lleva tu nombre y tu amor.<br>
       Este logro es tan tuyo como mío.
     </p>
   </section>
+
 
   <!-- Linea divisoria -->
   <section>
@@ -142,12 +185,26 @@
   <!-- Invitación -->
   <section>
     <p>Con el corazón lleno de gratitud,</p>
-    <p class="nombres">Nelson Enrique Quinta Quispe<br> Bety Quispe Clares</p>
-    <p>le invitan cordialmente a acompañarnos en la colación de grado de</p>
+    <p class="nombres">Nelson Enrique Quinta Quispe<br> Betty Quispe Clares</p>
+    <p>les invitamos cordialmente a acompañarnos a celebrar la colación de grado de</p>
     <p class="nombre-graduado">Ronal Quinta Miranda</p>
     <p style="height: 0px;">Ingeniero de Sistemas</p>
     <p>Universidad Salesiana de Bolivia</p>
     <p>un momento que marca el cierre de un capítulo y el inicio de muchos sueños.</p>
+  </section>
+
+  <!-- Linea divisoria -->
+  <section>
+    <hr>
+  </section>
+
+  <!-- Padrinos de Colación -->
+  <section>
+    <p class="titulo">Padrinos de Colación</p>
+    <p class="padrinos">
+      Sgto. 2do Marco Antonio Choque Condori <br>
+      Lic. Gladys Deisy Fernández Suxo     
+    </p>
   </section>
 
   <!-- Linea divisoria -->
@@ -172,17 +229,61 @@
 
   <!-- Ubicación -->
   <section>
-    <p class="titulo">Recepción</p>
+    <p class="titulo">Recepción Social</p>
     <p>
       SALÓN DE EVENTOS SANTA BARBARA<br>
-      (una cuadra del cruce 1ro de mayo hacia Villa Adela)<br>
+      (a una cuadra del cruce 1ro de mayo hacia Villa Adela)<br>
       Zona Pacajes Caluyo
     </p>
     <a href="https://maps.app.goo.gl/bjtEVantXXHk8bU88" target="_blank"
       class="btn px-4 py-2"
-      style="background: linear-gradient(45deg, #ffe137, #FFA500); color:var(--azul-salesiano); border: none; font-weight: 500; width: 300px;">
+      style="background: linear-gradient(45deg, #ffe137, #FFA500); color:var(--azul-salesiano); border: none; font-weight: 500; width: 90%;">
       VER UBICACIÓN
     </a>
+  </section>
+
+  <!-- Linea divisoria -->
+  <section>
+    <hr>
+  </section>
+
+  <!-- Línea de tiempo -->
+  <section>
+    <p class="titulo">Cronograma del Evento</p>
+    <div class="timeline">
+      <div class="event">
+        <div class="time">19:00</div>
+        <div class="icon"><span class="material-icons icon">wine_bar</span></div>
+        <div class="desc">Inicio del brindis</div>
+      </div>
+      <div class="event">
+        <div class="time">20:00</div>
+        <div class="icon"><span class="material-icons icon">restaurant</span></div>
+        <div class="desc">Cena</div>
+      </div>
+      <div class="event">
+        <div class="time">21:00</div>
+        <div class="icon"><span class="material-icons icon">cake</span></div>
+        <div class="desc">Corte de la torta</div>
+      </div>
+      <div class="event">
+        <div class="time">22:00</div>
+        <div class="icon"><span class="material-icons icon">music_note</span></div>
+        <div class="desc">Baile</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Linea divisoria -->
+  <section>
+  <hr>
+  </section>
+
+  <!-- Dedicatoria -->
+  <section>
+    <p class="titulo">Amenizado al Rimto de:</p>
+    <img src="image/logo2.jpeg" style="width: 100%; margin-bottom: 20px;" alt="">
+    <img src="image/logo3.jpeg" style="width: 100%; margin-bottom: 20px;" alt="">
   </section>
 
   <!-- Linea divisoria -->
