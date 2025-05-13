@@ -111,229 +111,309 @@
       text-align: center;
     }
 
+    /* Línea vertical del timeline */
     .timeline {
-    border-left: 3px solid #ccc;
-    margin-left: 10px;
-    padding-left: 0px;
-  }
+      border-left: 3px solid #f4c300;
+      margin-left: 20px;
+      padding-left: 20px;
+    }
 
-  .event {
-    position: relative;
-    margin-bottom: 20px;
-  }
+    /* Cada evento se comporta como una fila */
+    .event {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
 
-  .event::before {
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 45px;
-    width: 12px;
-    height: 12px;
-    background-color: var(--amarillo-salesiano);
-    border-radius: 50%;
-  }
+    /* Hora a la izquierda */
+    .left .time {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--amarillo-salesiano);
+      margin-right: 20px;
+      min-width: 80px;
+      text-align: right;
+      margin-top: 10%;
+    }
 
-  .time {
-    font-weight: bold;
-    color: #ffffff;
-  }
+    /* Ícono + descripción a la derecha */
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* horizontal center */
+      justify-content: center; /* vertical center */
+      text-align: center;
+      flex: 1;
+    }
 
-  .icon {
-    font-size: 2.5rem;
-    margin: 5px 0;
-  }
+    .right .icon {
+      font-size: 2.5rem;
+      color: white;
+      margin-bottom: 0px;
+    }
 
-  .desc {
-    font-style: italic;
-    color: #ffffff;
-  }
+    .right .desc {
+      font-style: italic;
+      color: white;
+      font-size: 1rem;
+      margin-top: -10px;
+    }
+
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5); /* opcional para oscurecer el fondo */
+      padding: 2rem;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero-logo {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .hero-text {
+      font-size: 1.5rem;
+      color: white;
+      line-height: 1.6;
+    }
+
+    .btn-invitacion {
+      background: linear-gradient(45deg, #f4c300, #ffd93b);
+      color: #002e6d;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-invitacion:hover {
+      background: linear-gradient(45deg, #ffd93b, #f4c300);
+      color: white;
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    }
+
   </style>
 </head>
 <body>
 
-<div class="container p-4 rounded border border-warning shadow" style="background-color: rgba(88, 88, 88, 0.4);">
+  <!-- Presentación / Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      
+      <img src="image/LOGO USB.png" alt="Logo USB" class="hero-logo">
+      <p class="hero-text fst-italic">
+        Un sueño que comenzó con pasión y esfuerzo,<br>
+        hoy se convierte en realidad.<br>
+        Acompáñanos a celebrar este gran logro.
+      </p>
+      <a href="#invitacion" class="btn-invitacion mt-3">Ver Invitación</a>
 
-  <!-- Presentación -->
-  <section>
-    <img src="image/LOGO USB.png" style="width: 100px; margin-bottom: 20px;" alt="">
-    <p class="fst-italic">
-      Un sueño que comenzó con pasión y esfuerzo, hoy se convierte en realidad. Acompáñanos a celebrar este gran logro.
-    </p>
-  </section>
-
-  <!-- Linea divisoria -->
-  <section>
-  <hr>
-  </section>
-
-  <!-- Dedicatoria -->
-  <section>
-    <p class="titulo">Agradecimiento a mi Querida Mamá</p>
-    <p class="fst-italic">
-      Para ti, mamá Yandira Miranda Choque<span style="font-size: 1.2rem; color: var(--amarillo-salesiano);">✝</span>,<br>
-      cada paso que doy lleva tu nombre y tu amor.<br>
-      Este logro es tan tuyo como mío.
-    </p>
-  </section>
-
-
-  <!-- Linea divisoria -->
-  <section>
-    <hr>
-  </section>
-
-  <!-- Invitación -->
-  <section>
-    <p>Con el corazón lleno de gratitud,</p>
-    <p class="nombres">Nelson Enrique Quinta Quispe<br> Betty Quispe Clares</p>
-    <p>les invitamos cordialmente a acompañarnos a celebrar la colación de grado de</p>
-    <p class="nombre-graduado">Ronal Quinta Miranda</p>
-    <p style="height: 0px;">Ingeniero de Sistemas</p>
-    <p>Universidad Salesiana de Bolivia</p>
-    <p>un momento que marca el cierre de un capítulo y el inicio de muchos sueños.</p>
-  </section>
-
-  <!-- Linea divisoria -->
-  <section>
-    <hr>
-  </section>
-
-  <!-- Padrinos de Colación -->
-  <section>
-    <p class="titulo">Padrinos de Colación</p>
-    <p class="padrinos">
-      Sgto. 2do Marco Antonio Choque Condori <br>
-      Lic. Gladys Deisy Fernández Suxo     
-    </p>
-  </section>
-
-  <!-- Linea divisoria -->
-  <section>
-    <hr>
-  </section>
-
-  <!-- Fecha y hora -->
-  <section>
-    <p>LA CELEBRACIÓN SERÁ ESTE:</p>
-    <p class="dia">SÁBADO</p>
-    <h2 class="numero">24</h2>
-    <p class="mes">mayo</p>
-    <p class="year">2025</p>
-    <p class="hora">A LAS 16:00 HRS.</p>
-  </section>
-
-  <!-- Linea divisoria -->
-  <section>
-    <hr>
-  </section>
-
-  <!-- Ubicación -->
-  <section>
-    <p class="titulo">Recepción Social</p>
-    <p>
-      SALÓN DE EVENTOS SANTA BARBARA<br>
-      (a una cuadra del cruce 1ro de mayo hacia Villa Adela)<br>
-      Zona Pacajes Caluyo
-    </p>
-    <a href="https://maps.app.goo.gl/bjtEVantXXHk8bU88" target="_blank"
-      class="btn px-4 py-2"
-      style="background: linear-gradient(45deg, #ffe137, #FFA500); color:var(--azul-salesiano); border: none; font-weight: 500; width: 90%;">
-      VER UBICACIÓN
-    </a>
-  </section>
-
-  <!-- Linea divisoria -->
-  <section>
-    <hr>
-  </section>
-
-  <!-- Línea de tiempo -->
-  <section>
-    <p class="titulo">Cronograma del Evento</p>
-    <div class="timeline">
-      <div class="event">
-        <div class="time">19:00</div>
-        <div class="icon"><span class="material-icons icon">wine_bar</span></div>
-        <div class="desc">Inicio del brindis</div>
-      </div>
-      <div class="event">
-        <div class="time">20:00</div>
-        <div class="icon"><span class="material-icons icon">restaurant</span></div>
-        <div class="desc">Cena</div>
-      </div>
-      <div class="event">
-        <div class="time">21:00</div>
-        <div class="icon"><span class="material-icons icon">cake</span></div>
-        <div class="desc">Corte de la torta</div>
-      </div>
-      <div class="event">
-        <div class="time">22:00</div>
-        <div class="icon"><span class="material-icons icon">music_note</span></div>
-        <div class="desc">Baile</div>
-      </div>
     </div>
   </section>
 
-  <!-- Linea divisoria -->
-  <section>
-  <hr>
-  </section>
+  <div class="container p-4 rounded border border-warning shadow" id="invitacion" style="background-color: rgba(88, 88, 88, 0.4);">
+    
+    <!-- Dedicatoria -->
+    <section>
+      <p class="titulo">Agradecimiento a mi Querida Mamá</p>
+      <p class="fst-italic">
+        Para ti, mamá Yandira Miranda Choque<span style="font-size: 1.2rem; color: var(--amarillo-salesiano);">✞</span>,<br>
+        cada paso que doy lleva tu nombre y tu amor.<br>
+        Este logro es tan tuyo como mío.
+      </p>
+    </section>
 
-  <!-- Dedicatoria -->
-  <section>
-    <p class="titulo">Amenizado al Rimto de:</p>
-    <img src="image/logo2.jpeg" style="width: 100%; margin-bottom: 20px;" alt="">
-    <img src="image/logo3.jpeg" style="width: 100%; margin-bottom: 20px;" alt="">
-  </section>
+    <!-- Linea divisoria -->
+    <section>
+      <hr>
+    </section>
 
-  <!-- Linea divisoria -->
-  <section>
+    <!-- Invitación -->
+    <section>
+      <p>Con el corazón lleno de gratitud,</p>
+      <p class="nombres">Nelson Quinta Quispe<br> Betty Quispe Clares</p>
+      <p>les invitamos cordialmente a acompañarnos a celebrar la colación de grado de</p>
+      <p class="nombre-graduado">Ronal Quinta Miranda</p>
+      <p style="height: 0px;">Ingeniero de Sistemas</p>
+      <p>Universidad Salesiana de Bolivia</p>
+      <p>Un momento que marca el cierre de un capítulo y el inicio de muchos sueños.</p>
+    </section>
+
+    <!-- Linea divisoria -->
+    <section>
+      <hr>
+    </section>
+
+    <!-- Padrinos de Colación -->
+    <section>
+      <p class="titulo">Padrinos de Colación</p>
+      <p class="padrinos">
+        Sgto. 2do Marco Antonio Choque Condori <br>
+        Lic. Gladys Deisy Fernández Suxo     
+      </p>
+    </section>
+
+    <!-- Linea divisoria -->
+    <section>
+      <hr>
+    </section>
+
+    <!-- Fecha y hora -->
+    <section>
+      <p>LA CELEBRACIÓN SERÁ ESTE:</p>
+      <p class="dia">SÁBADO</p>
+      <h2 class="numero">24</h2>
+      <p class="mes">mayo</p>
+      <p class="year">2025</p>
+      <p class="hora">A LAS 16:00 HRS.</p>
+    </section>
+
+    <!-- Linea divisoria -->
+    <section>
+      <hr>
+    </section>
+
+    <!-- Ubicación -->
+    <section>
+      <p class="titulo">Recepción Social</p>
+      <p>
+        SALÓN DE EVENTOS SANTA BARBARA<br>
+        (a una cuadra del cruce 1ro de mayo hacia Villa Adela)<br>
+        Zona Pacajes Caluyo
+      </p>
+      <a href="https://maps.app.goo.gl/bjtEVantXXHk8bU88" target="_blank"
+        class="btn px-4 py-2"
+        style="background: linear-gradient(45deg, #ffe137, #FFA500); color:var(--azul-salesiano); border: none; font-weight: 500; width: 90%;">
+        VER UBICACIÓN
+      </a>
+    </section>
+
+    <!-- Linea divisoria -->
+    <section>
+      <hr>
+    </section>
+
+    <!-- Línea de tiempo -->
+    <section>
+      <p class="titulo">Cronograma del Evento</p>
+      <div class="timeline">
+        <div class="event">
+          <div class="left">
+            <div class="time">18:00</div>
+          </div>
+          <div class="right">
+            <div class="icon"><span class="material-icons" style="font-size: 2.5rem; margin-bottom: 0%;">wine_bar</span></div>
+            <div class="desc">Inicio del brindis</div>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="left">
+            <div class="time">20:00</div>
+          </div>
+          <div class="right">
+            <div class="icon"><span class="material-icons" style="font-size: 2.5rem; margin-bottom: 0%;">restaurant</span></div>
+            <div class="desc">Cena</div>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="left">
+            <div class="time">21:00</div>
+          </div>
+          <div class="right">
+            <div class="icon"><span class="material-icons" style="font-size: 2.5rem; margin-bottom: 0%;">cake</span></div>
+            <div class="desc">Corte de la torta</div>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="left">
+            <div class="time">22:00</div>
+          </div>
+          <div class="right">
+            <div class="icon"><span class="material-icons" style="font-size: 2.5rem; margin-bottom: 0%;">music_note</span></div>
+            <div class="desc">Baile</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Linea divisoria -->
+    <section>
     <hr>
-  </section>
+    </section>
 
-  <!-- Contador -->
-  <section>
-    <p class="titulo">Faltan:</p>
-    <p id="contador">Calculando...</p>
-  </section>
+    <!-- Dedicatoria -->
+    <section>
+      <p class="titulo">Amenizado al Rimto de:</p>
+      <img src="image/logo2.jpeg" style="width: 100%; margin-bottom: 20px;" alt="">
+      <img src="image/logo3.jpeg" style="width: 100%; margin-bottom: 20px;" alt="">
+    </section>
 
-  <!-- Linea divisoria -->
-  <section>
-    <hr>
-  </section>
+    <!-- Linea divisoria -->
+    <section>
+      <hr>
+    </section>
 
-  <!-- Despedida -->
-  <section>
-    <p class="dpp">¡CELEBREMOS JUNTOS</p>
-    <p class="dsp">te esperamos!</p>
-  </section>
+    <!-- Contador -->
+    <section>
+      <p class="titulo">Faltan:</p>
+      <p id="contador">Calculando...</p>
+    </section>
 
-</div>
+    <!-- Linea divisoria -->
+    <section>
+      <hr>
+    </section>
 
-<script>
-  // Contador regresivo hasta el 24 de mayo de 2025 a las 16:00
-  const fechaObjetivo = new Date("May 24, 2025 16:00:00").getTime();
+    <!-- Despedida -->
+    <section>
+      <p class="dpp">¡CELEBREMOS JUNTOS</p>
+      <p class="dsp">te esperamos!</p>
+    </section>
 
-  const contador = document.getElementById("contador");
+  </div>
 
-  const intervalo = setInterval(() => {
-    const ahora = new Date().getTime();
-    const distancia = fechaObjetivo - ahora;
+  <script>
+    // Contador regresivo hasta el 24 de mayo de 2025 a las 16:00
+    const fechaObjetivo = new Date("May 24, 2025 16:00:00").getTime();
 
-    if (distancia <= 0) {
-      clearInterval(intervalo);
-      contador.innerHTML = "¡Hoy es el gran día!";
-      return;
-    }
+    const contador = document.getElementById("contador");
 
-    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+    const intervalo = setInterval(() => {
+      const ahora = new Date().getTime();
+      const distancia = fechaObjetivo - ahora;
 
-    contador.innerHTML = `${dias} días, ${horas} horas, ${minutos} minutos y ${segundos} segundos`;
-  }, 1000);
-</script>
+      if (distancia <= 0) {
+        clearInterval(intervalo);
+        contador.innerHTML = "¡Hoy es el gran día!";
+        return;
+      }
+
+      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+      contador.innerHTML = `${dias} días, ${horas} horas, ${minutos} minutos y ${segundos} segundos`;
+    }, 1000);
+  </script>
 
 </body>
 </html>
