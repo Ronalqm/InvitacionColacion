@@ -241,7 +241,8 @@
   </style>
 </head>
 <body>
-  <audio id="bg-music" src="audio/Marvin_Gaye_feat_Meghan_Trainor_Charlie_Puth_Meghan_Trainor_320.mp3" autoplay loop></audio>
+  
+  <!-- Botón de silenciar -->
   <button id="mute-btn" class="mute-button" title="Silenciar o Activar">
     <img id="mute-icon" src="image/volumen.png" alt="Volumen" style="width: 24px; height: 24px;">
   </button>
@@ -250,16 +251,32 @@
   <section class="hero">
     <div class="hero-content">
       <img src="image/LOGO USB.png" alt="Logo USB" class="hero-logo">
-      <p class="title">Mi Colacion de Grado 🎓</p>
+      <p class="title">Mi Colación de Grado 🎓</p>
       <p class="hero-text fst-italic">
         Un sueño que comenzó con pasión y esfuerzo,
         hoy se convierte en realidad.
         Acompáñanos a celebrar este gran logro.
       </p>
-      <a href="#invitacion" class="btn-invitacion mt-3">Ver Invitación</a>
-
+      <a href="#invitacion" id="btnIniciarMusica" class="btn-invitacion mt-3">Ver Invitación</a>
     </div>
   </section>
+
+  <!-- Audio oculto -->
+  <audio id="musicaFondo" src="audio/Marvin_Gaye_feat_Meghan_Trainor_Charlie_Puth_Meghan_Trainor_320.mp3" loop preload="auto"></audio>
+
+  <script>
+    const boton = document.getElementById('btnIniciarMusica');
+    const musica = document.getElementById('musicaFondo');
+
+    boton.addEventListener('click', function () {
+      // Intenta reproducir la música
+      musica.volume = 0.3; // puedes ajustar el volumen aquí
+      musica.play().catch((error) => {
+        console.warn("Reproducción bloqueada por el navegador:", error);
+      });
+    });
+  </script>
+
 
   <div id="invitacion"></div>
   <div class="container p-4 rounded border border-warning shadow" style="background-color: rgba(88, 88, 88, 0.4);">
@@ -454,29 +471,30 @@
 
 
 
-    const music = document.getElementById("bg-music");
+    const music = document.getElementById("musicaFondo");
+    const btnIniciar = document.getElementById("btnIniciarMusica");
     const muteBtn = document.getElementById("mute-btn");
     const muteIcon = document.getElementById("mute-icon");
 
-    // Verifica si se puede reproducir automáticamente
-    window.addEventListener("DOMContentLoaded", () => {
-      music.play().catch(() => {
-        // Si el navegador bloquea autoplay, mostramos el ícono de silencio
-        muteIcon.src = "image/silencio.png";
-      });
+    // Establece volumen máximo permitido
+    music.volume = 0.3;
+
+    // Reproduce música solo cuando el usuario hace clic
+    btnIniciar.addEventListener("click", () => {
+      if (music.paused) {
+        music.play().then(() => {
+          muteIcon.src = music.muted ? "image/silencio.png" : "image/volumen.png";
+        }).catch((error) => {
+          console.error("Error al reproducir música:", error);
+        });
+      }
     });
 
+    // Alterna mute al hacer clic en el botón flotante
     muteBtn.addEventListener("click", () => {
       music.muted = !music.muted;
       muteIcon.src = music.muted ? "image/silencio.png" : "image/volumen.png";
     });
-
-    const audio = document.getElementById("bg-music");
-
-    // Limitar el volumen máximo a 50%
-    if (audio.volume > 0.2) {
-      audio.volume = 0.3;
-    }
   </script>
 
 </body>
