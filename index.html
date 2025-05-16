@@ -221,9 +221,30 @@
       filter: invert(1);
     }
 
+    .mute-button {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 9999;
+      border: none;
+      background-color: rgba(244, 195, 0, 0.8); /* Amarillo con opacidad del 80% */
+      padding: 8px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(3px); /* opcional: da un efecto de vidrio */
+    }
+
   </style>
 </head>
 <body>
+  <audio id="bg-music" src="audio/Marvin_Gaye_feat_Meghan_Trainor_Charlie_Puth_Meghan_Trainor_320.mp3" autoplay loop></audio>
+  <button id="mute-btn" class="mute-button" title="Silenciar o Activar">
+    <img id="mute-icon" src="image/volumen.png" alt="Volumen" style="width: 24px; height: 24px;">
+  </button>
 
   <!-- Presentación / Hero -->
   <section class="hero">
@@ -430,6 +451,32 @@
 
       contador.innerHTML = `${dias} días, ${horas} horas, ${minutos} minutos y ${segundos} segundos`;
     }, 1000);
+
+
+
+    const music = document.getElementById("bg-music");
+    const muteBtn = document.getElementById("mute-btn");
+    const muteIcon = document.getElementById("mute-icon");
+
+    // Verifica si se puede reproducir automáticamente
+    window.addEventListener("DOMContentLoaded", () => {
+      music.play().catch(() => {
+        // Si el navegador bloquea autoplay, mostramos el ícono de silencio
+        muteIcon.src = "image/silencio.png";
+      });
+    });
+
+    muteBtn.addEventListener("click", () => {
+      music.muted = !music.muted;
+      muteIcon.src = music.muted ? "image/silencio.png" : "image/volumen.png";
+    });
+
+    const audio = document.getElementById("bg-music");
+
+    // Limitar el volumen máximo a 50%
+    if (audio.volume > 0.2) {
+      audio.volume = 0.3;
+    }
   </script>
 
 </body>
